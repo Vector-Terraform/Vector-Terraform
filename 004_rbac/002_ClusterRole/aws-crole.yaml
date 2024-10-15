@@ -3,4 +3,11 @@ kind: ClusterRole
 metadata:
   name: aws-crole
 rules:
-- {}
+- apiGroup: networking.aws.io
+  resources:
+  - VPC
+  - Subnet
+  verbs:
+  - get
+  - list
+  - watch
