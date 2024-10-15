@@ -1,0 +1,89 @@
+apiGroup: core.vector.io/v1
+kind: Application
+metadata:
+  name: terraform-apiserver-app
+spec:
+  organization: infra
+  priority: 500001
+  runtimeClassName: kubernetes # ["kubernetes","docker-compose","containerd", "direct"]
+  repository:
+    address: https://github.com/infra/vector-apiserver.git
+  programmingLanguage: java
+  operatingSystem:
+    - distribution: debian
+      version: 12.04
+      architecture: amd64
+  components:
+    compiler:
+      name: maven
+      version: 3.6.3
+    runtime:
+      name: jdk
+      version: 1.8
+  process:
+    startupProbe:
+      httpGet:
+    readinessProbe:
+      httpGet:
+    livenessProbe:
+      httpGet:
+    lifecycle:
+      postStart:
+        exec:
+          command: []
+      preStop:
+        exec:
+          command: []
+    securityContext:
+      appArmorProfile: ""
+      seLinuxOptions: ""
+      seccompProfile: ""
+      capabilities: ""
+      readOnlyRootFilesystem: ""
+      privileged: ""
+      allowPrivilegeEscalation: ""
+      procMount: ""
+      runAsUser: ""
+      runAsGroup: ""
+    command:
+      - /bin/vector-apiserver
+    args:
+      - --port=8080
+      - --secure-port=8443
+      - --tls-cert-file=/etc/vector-apiserver/tls.crt
+      - --tls-private-key-file=/etc/vector-apiserver/tls.key
+    ports:
+      - name: http
+        containerPort: 8080
+      - name: https
+        containerPort: 8443
+    resources:
+      limits:
+        cpu: 2
+        memory: 4Gi
+        storage: 10Gi
+      requests:
+        cpu: 2
+        memory: 4Gi
+        storage: 10Gi
+  affinity:
+    clusterAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        clusterSelectorTerms: # []or
+          - replicas: 3
+            matchExpressions: # []and
+              - key: core.vector.io/name
+                operator: In
+                values:
+                  - office-internal
+            
+  volumeClaimTemplates:
+    - metadata:
+        name: vector-apiserver-pvc
+      spec:
+        storageClassName: bce-cds-sc
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
