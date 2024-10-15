@@ -1,0 +1,67 @@
+apiGroup: core.vector.io/v1
+kind: Kubernetes
+metadata:
+  name: office-01-k8s
+spec:
+  nodeGroup: office-01
+  serviceAccount: office-sa
+  clusterRole: office-crole
+  clusterRoleBinding: office-crb
+  version: 1.28.13
+  VPC: vpc-0a1b2c3d4e5f6g7h8
+  subnet: subnet-0a1b2c3d4e5f6g7h8
+  region: us-west-2
+  zone: us-west-2a
+  nodePool:
+    - name: office-01
+      minSize: 1
+      maxSize: 1
+      desiredCapacity: 1
+      instanceType: t2.micro
+      image: ami-0c55b159cbfafe1f0
+      keyPair: office-internal-keypair
+      securityGroup: office-internal-sg
+      subnet: office-internal-subnet
+  tags:
+    - key: Name
+      value: office-01-k8s
+    - key: Environment
+      value: office
+    - key: Owner
+      value: ops
+    - key: Project
+      value: office
+    - key: Team
+      value: ops
+    - key: CostCenter
+      value: 12345
+    - key: Application
+      value: office
+    - key: Service
+      value: office
+    - key: Role
+      value: office
+    - key: Stack
+      value: office
+    - key: Version
+      value: 1.28.13
+    - key: Description
+      value: office
+    - key: CreatedBy
+      value: ops
+    - key: CreatedAt
+      value: 2020-01-01T00:00:00Z
+    - key: UpdatedBy
+      value: ops
+    - key: UpdatedAt
+      value: 2020-01-01T00:00:00Z
+    - key: DeletedBy
+      value: ops
+    - key: DeletedAt
+      value: 2020-01-01T00:00:00Z
+    - key: State
+      value: active
+    - key: Status
+      value: active
+    - key: Health
+      value: healthy
