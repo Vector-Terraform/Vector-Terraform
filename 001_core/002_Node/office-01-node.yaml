@@ -1,7 +1,8 @@
 apiGroup: core.vector.io/v1
-kind: NodeTemplate
+kind: Node
 metadata:
   name: office-01
+  labels: {}
 spec:
   cloudProvider: office-internal
   instanceType: t2.micro

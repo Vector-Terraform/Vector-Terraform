@@ -1,0 +1,56 @@
+apiGroup: core.vector.io/v1
+kind: NodeGroup
+metadata:
+  name: office-01
+  labels: {}
+spec:
+  template:
+    cloudProvider: office-internal
+    instanceType: t2.micro
+    image: ami-0c55b159cbfafe1f0
+    subnet: office-internal-subnet
+    securityGroup: office-internal-sg
+    keyPair: office-internal-keypair
+    tags:
+      - key: Name
+        value: office-01
+      - key: Environment
+        value: office
+      - key: Owner
+        value: ops
+      - key: Project
+        value: office
+      - key: Team
+        value: ops
+      - key: CostCenter
+        value: 12345
+      - key: Application
+        value: office
+      - key: Service
+        value: office
+      - key: Role
+        value: office
+      - key: Stack
+        value: office
+      - key: Version
+        value: 1.0.0
+      - key: Description
+        value: office
+      - key: CreatedBy
+        value: ops
+      - key: CreatedAt
+        value: 2020-01-01T00:00:00Z
+      - key: UpdatedBy
+        value: ops
+      - key: UpdatedAt
+        value: 2020-01-01T00:00:00Z
+      - key: DeletedBy
+        value: ops
+      - key: DeletedAt
+        value: 2020-01-01T00:00:00Z
+      - key: State
+        value: active
+      - key: Status
+        value: active
+      - key: Health
+        value: healthy
