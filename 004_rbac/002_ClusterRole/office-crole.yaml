@@ -3,4 +3,21 @@ kind: ClusterRole
 metadata:
   name: office-crole
 rules:
-- {}
+  - apiGroup: core.vector.io
+    resources:
+      - NodeGroup
+    resouseNames:
+      - office-01
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroup: core.vector.io
+    resources:
+      - Application
+    resourceNames:
+      - "*"
+    verbs:
+      - get
+      - list
+      - watch
