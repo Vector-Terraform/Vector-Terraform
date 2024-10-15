@@ -1,0 +1,44 @@
+apiGroup: rdb.vector.io
+kind: MySQL
+metadata:
+  name: office-mysql
+spec:
+  replicas: 1
+  storageSize: 10Gi
+  storageClassName: standard
+  database: office
+  username: root
+  password: password
+  service:
+    type: ClusterIP
+    port: 3306
+  resources:
+    requests:
+      cpu: 0.5
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
+  nodeSelector:
+    kubernetes.io/hostname: node-1
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - node-1
+  tolerations:
+  - key: "node-role.kubernetes.io/master"
+    operator: "Exists"
+    effect: "NoSchedule"
+  - key: "node.kubernetes.io/unreachable"
+    operator: "Exists"
+    effect: "NoExecute"
+    tolerationSeconds: 300
+  - key: "node.kubernetes.io/not-ready"
+    operator: "Exists"
+    effect: "NoExecute"
+    tolerationSeconds: 300
