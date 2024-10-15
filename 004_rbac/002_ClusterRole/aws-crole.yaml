@@ -1,0 +1,6 @@
+apiGroup: rbac.authorization.aws.io/v1
+kind: ClusterRole
+metadata:
+  name: aws-crole
+rules:
+- {}

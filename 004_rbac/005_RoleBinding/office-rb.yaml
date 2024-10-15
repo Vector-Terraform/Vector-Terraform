@@ -1,0 +1,11 @@
+apiGroup: rbac.authorization.vector.io/v1
+kind: RoleBinding
+metadata:
+  name: office-rb
+roleRef:
+  apiGroup: rbac.authorization.vector.io/v1
+  kind: Role
+  name: office-role
+subjects:
+- kind: ServiceAccount
+  name: office-sa

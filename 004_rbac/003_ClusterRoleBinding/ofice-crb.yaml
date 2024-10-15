@@ -1,0 +1,11 @@
+apiGroup: rbac.authorization.vector.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: office-crb
+roleRef:
+  apiGroup: rbac.authorization.vector.io/v1
+  kind: ClusterRole
+  name: office-crole
+subjects:
+- kind: ServiceAccount
+  name: office-sa

@@ -1,0 +1,8 @@
+apiGroup: networking.vector.io/v1
+kind: VPC
+metadata:
+  name: office-internal-vpc
+spec:
+  cloudProvider: office-internal
+  cidrBlock:
+    - 10.10.0.0/16

@@ -1,0 +1,6 @@
+apiGroup: rbac.authorization.vector.io/v1
+kind: Role
+metadata:
+  name: office-role
+rules:
+- {}

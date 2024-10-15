@@ -1,0 +1,10 @@
+apiGroup: storage.vector.io/v1
+kind: StorageClass
+metadata:
+  name: office-sc
+spec:
+  cloudProvider: office-internal
+  type: gp2
+  zone: bj-02
+  replication: 3
+  storage: 100Gi

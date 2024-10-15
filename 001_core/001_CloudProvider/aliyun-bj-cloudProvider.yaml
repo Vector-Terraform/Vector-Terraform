@@ -1,0 +1,7 @@
+apiGroup: core.aliyun.io/v1
+kind: CloudProvider
+metadata:
+  name: aliyun-bj
+spec:
+  region: cn-north-1
+  zone: cn-north-1a

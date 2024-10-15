@@ -1,0 +1,11 @@
+apiGroup: storage.vector.io/v1
+kind: PersistentVolumeClaim
+metadata:
+  name: office-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: office-sc
+  resources:
+    requests:
+      storage: 100Gi

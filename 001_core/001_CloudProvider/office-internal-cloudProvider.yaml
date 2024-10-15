@@ -1,0 +1,7 @@
+apiGroup: core.vector.io/v1
+kind: CloudProvider
+metadata:
+  name: office-internal
+spec:
+  region: bj
+  zone: bj-02

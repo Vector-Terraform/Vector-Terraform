@@ -1,0 +1,6 @@
+apiGroup: rbac.authorization.vector.io/v1
+kind: ClusterRole
+metadata:
+  name: office-crole
+rules:
+- {}

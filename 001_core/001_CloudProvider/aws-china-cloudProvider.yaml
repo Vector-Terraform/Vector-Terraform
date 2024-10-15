@@ -1,0 +1,7 @@
+apiGroup: core.aws.io/v1
+kind: CloudProvider
+metadata:
+  name: aws-china
+spec:
+  region: cn-north
+  zone: cn-north-01
