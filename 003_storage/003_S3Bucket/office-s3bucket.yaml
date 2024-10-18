@@ -1,0 +1,8 @@
+apiGroup: storage.vector.io/v1
+kind: S3Bucket
+metadata:
+  name: office-s3bucket
+spec:
+  region: 
+  - us-west-2
+  deleteProtection: true

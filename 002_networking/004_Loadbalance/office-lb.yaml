@@ -6,9 +6,7 @@ spec:
   internal: true
   loadBalancerType: application
   deleteProtection: true
-  subnets:
-    - subnet-1
-    - subnet-2
+  subnet: subnet-1
   ports:
     - port: 80
       targetPort: 80
