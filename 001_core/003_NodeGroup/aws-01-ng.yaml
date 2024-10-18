@@ -4,89 +4,52 @@ metadata:
   name: aws-01
 spec:
   template:
-    cloudProvider: aws-china
-    instanceType: ecs.n4.small
-    image: centos_7_6
-    rootVolume:
-      size: 40
-      type: cloud_efficiency
-    dataVolumes:
-      - size: 100
-        type: cloud_efficiency
-    keyPair: my-keypair
-    securityGroups:
-      - my-sg
+    cloudProvider: office-internal
+    instanceType: t2.micro
+    image: ami-0c55b159cbfafe1f0
+    subnet: office-internal-subnet
+    securityGroup: office-internal-sg
+    keyPair: office-internal-keypair
     tags:
-      - key: env
-        value: dev
-      - key: owner
+      - key: Name
+        value: office-01
+      - key: Environment
+        value: office
+      - key: Owner
         value: ops
-    labels:
-      - key: node
-        value: aws-01
-    taints:
-      - key: node
-        value: aws-01
-        effect: NoSchedule
-    affinity:
-      - key: node
-        operator: In
-        values:
-          - aws-01
-    tolerations:
-      - key: node
-        operator: Equal
-        value: aws-01
-        effect: NoSchedule
-    nodeSelector:
-      key: node
-      value: aws-01
-    annotations:
-      - key: node
-        value: aws-01
-    lifecycle:
-      preStop:
-        exec:
-          command:
-            - /bin/sh
-            - -c
-            - /usr/local/bin/pre-stop.sh
-      postStart:
-        exec:
-          command:
-            - /bin/sh
-            - -c
-            - /usr/local/bin/post-start.sh
-    initContainers:
-      - name: init-1
-        image: busybox
-        command:
-          - /bin/sh
-          - -c
-          - echo "Hello, World!"
-    containers:
-      - name: container-1
-        image: busybox
-        command:
-          - /bin/sh
-          - -c
-          - echo "Hello, World!"
-    volumes:
-      - name: volume-1
-        emptyDir: {}
-    restartPolicy: Always
-    terminationGracePeriodSeconds: 30
-    dnsPolicy: ClusterFirst
-    hostNetwork: false
-    hostPID: false
-    hostIPC: false
-    shareProcessNamespace: false
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 3000
-      fsGroup: 2000
-      seLinuxOptions:
-        user: system_u
-        role: system_r
-        type: svirt_lxc_net_t
-        level: s0:c123
+      - key: Project
+        value: office
+      - key: Team
+        value: ops
+      - key: CostCenter
+        value: 12345
+      - key: Application
+        value: office
+      - key: Service
+        value: office
+      - key: Role
+        value: office
+      - key: Stack
+        value: office
+      - key: Version
+        value: 1.0.0
+      - key: Description
+        value: office
+      - key: CreatedBy
+        value: ops
+      - key: CreatedAt
+        value: 2020-01-01T00:00:00Z
+      - key: UpdatedBy
+        value: ops
+      - key: UpdatedAt
+        value: 2020-01-01T00:00:00Z
+      - key: DeletedBy
+        value: ops
+      - key: DeletedAt
+        value: 2020-01-01T00:00:00Z
+      - key: State
+        value: active
+      - key: Status
+        value: active
+      - key: Health
+        value: healthy
