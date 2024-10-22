@@ -1,4 +1,4 @@
-apiGroup: core.aws.io/v1
+apiVersion: core.aws.io/v1
 kind: CloudProvider
 metadata:
   name: aws-china

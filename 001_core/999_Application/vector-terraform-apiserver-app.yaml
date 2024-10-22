@@ -1,4 +1,4 @@
-apiGroup: core.vector.io/v1
+apiVersion: core.vector.io/v1
 kind: Application
 metadata:
   name: terraform-apiserver-app

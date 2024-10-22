@@ -1,4 +1,4 @@
-apiGroup: memdb.vector.io
+apiVersion: memdb.vector.io
 kind: Redis
 metadata:
   name: office-redis

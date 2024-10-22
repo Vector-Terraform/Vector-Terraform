@@ -1,4 +1,4 @@
-apiGroup: networking.vector.io/v1
+apiVersion: networking.vector.io/v1
 kind: Subnet
 metadata:
   name: office-internal-subnet

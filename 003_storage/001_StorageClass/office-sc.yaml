@@ -1,4 +1,4 @@
-apiGroup: storage.vector.io/v1
+apiVersion: storage.vector.io/v1
 kind: StorageClass
 metadata:
   name: office-sc

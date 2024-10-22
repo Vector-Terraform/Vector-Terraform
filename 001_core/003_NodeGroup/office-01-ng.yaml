@@ -1,4 +1,4 @@
-apiGroup: core.vector.io/v1
+apiVersion: core.vector.io/v1
 kind: NodeGroup
 metadata:
   name: office-01

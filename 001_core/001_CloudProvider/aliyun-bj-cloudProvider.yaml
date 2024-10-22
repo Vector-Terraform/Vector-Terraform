@@ -1,4 +1,4 @@
-apiGroup: core.aliyun.io/v1
+apiVersion: core.aliyun.io/v1
 kind: CloudProvider
 metadata:
   name: aliyun-bj

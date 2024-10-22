@@ -1,4 +1,4 @@
-apiGroup: networking.vector.io/v1
+apiVersion: networking.vector.io/v1
 kind: LoadBalancer
 metadata:
   name: office-lb

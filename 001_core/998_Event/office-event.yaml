@@ -1,0 +1,34 @@
+apiVersion: audit.vector.io/v1
+kind: Event
+metadata:
+  name: office-event
+user: 
+  username: system:serviceaccount:volcano-system:volcano-scheduler
+  uid: a345dd35-7f49-4b54-b31b-b6b22e16ec18
+  groups:
+  - system:serviceaccounts
+  - system:serviceaccounts:volcano-system
+sourceIPs:
+- 10.10.10.10
+userAgent: kube-scheduler/v1.18.6
+objectRef:
+  resource: pods
+  namespace: default
+  name: test-pod
+  uid: 5e4f1b3b-4b3b-4b3b-4b3b-4b3b4b3b4b3b
+  apiVersion: v1
+  subresource: status
+
+responseStatus:
+  metadata: {}
+  status: Success
+  code: 200
+
+requestObject:
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: test-pod
+    namespace: default
+    uid: 5e4f1b3b-4b3b-4b3b-4b3b-4b3b4b3b4b3b
+  

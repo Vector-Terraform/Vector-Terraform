@@ -1,4 +1,4 @@
-apiGroup: storage.vector.io/v1
+apiVersion: storage.vector.io/v1
 kind: S3Bucket
 metadata:
   name: office-s3bucket

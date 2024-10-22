@@ -1,9 +1,9 @@
-apiGroup: rbac.authorization.vector.io/v1
+apiVersion: rbac.authorization.vector.io/v1
 kind: Role
 metadata:
   name: vector-terraform-role
 rules:
-- apiGroup: rbac.authorization.vector.io
+- apiVersion: rbac.authorization.vector.io
   resources:
   - ServiceAccount
   resourceNames:

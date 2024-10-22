@@ -1,9 +1,9 @@
-apiGroup: rbac.authorization.aws.io/v1
+apiVersion: rbac.authorization.aws.io/v1
 kind: ClusterRole
 metadata:
   name: aws-crole
 rules:
-- apiGroup: networking.aws.io
+- apiVersion: networking.aws.io
   resources:
   - VPC
   - Subnet

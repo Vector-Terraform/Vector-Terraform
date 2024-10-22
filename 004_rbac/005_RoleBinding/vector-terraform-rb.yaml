@@ -1,9 +1,9 @@
-apiGroup: rbac.authorization.vector.io/v1
+apiVersion: rbac.authorization.vector.io/v1
 kind: RoleBinding
 metadata:
   name: vector-terraform-rb
 roleRef:
-  apiGroup: rbac.authorization.vector.io/v1
+  apiVersion: rbac.authorization.vector.io/v1
   kind: Role
   name: vector-terraform-role
 subjects:

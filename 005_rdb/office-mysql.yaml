@@ -1,4 +1,4 @@
-apiGroup: rdb.vector.io
+apiVersion: rdb.vector.io
 kind: MySQL
 metadata:
   name: office-mysql

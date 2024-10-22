@@ -1,9 +1,9 @@
-apiGroup: rbac.authorization.vector.io/v1
+apiVersion: rbac.authorization.vector.io/v1
 kind: ClusterRole
 metadata:
   name: office-crole
 rules:
-  - apiGroup: core.vector.io
+  - apiVersion: core.vector.io
     resources:
       - NodeGroup
     resouseNames:
@@ -12,7 +12,7 @@ rules:
       - get
       - list
       - watch
-  - apiGroup: core.vector.io
+  - apiVersion: core.vector.io
     resources:
       - Application
     resourceNames:
