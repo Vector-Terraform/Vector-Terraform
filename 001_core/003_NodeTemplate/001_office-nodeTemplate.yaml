@@ -1,0 +1,20 @@
+apiVersion: core.vector.io/v1
+kind: NodeTemplate
+metadata:
+  name: one-ntemp
+  labels: {}
+spec:
+  cloudProvider: office-internal
+  instanceType: c8g.medium # r8g.medium 
+  image: ami-0c55b159cbfafe1f0
+  networking:
+    subnet:  office-internal-subnet
+  securityGroup: office-internal-sg
+  keyPair: office-internal-keypair
+  volumeTemplate:
+    system:
+      size: 8
+      type: gp2
+    data:
+      - size: 8
+        type: gp2
