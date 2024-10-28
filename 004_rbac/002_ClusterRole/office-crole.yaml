@@ -6,6 +6,10 @@ rules:
   - apiVersion: core.vector.io
     resources:
       - NodeGroup
+      - NodeTemplate
+      - Node
+      - Node/monitoring
+      - Node/alerting
     resouseNames:
       - office-01
     verbs:
@@ -15,6 +19,8 @@ rules:
   - apiVersion: core.vector.io
     resources:
       - Application
+      - Application/monitoring
+      - Application/alerting
     resourceNames:
       - "*"
     verbs:
