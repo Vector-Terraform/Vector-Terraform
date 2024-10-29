@@ -2,6 +2,9 @@ apiVersion: core.vector.io/v1
 kind: Application
 metadata:
   name: terraform-apiserver-app
+  annotations:
+    app.vector.io/monitoring: "a,b,c"
+    app.vector.io/alerting: "a,b,c"
 spec:
   organization: infra
   priority: 500001
@@ -20,6 +23,11 @@ spec:
     runtime:
       name: jdk
       version: 1.8
+    dependencies:
+      - name: mysql
+        version: 5.7
+      - name: redis
+        version: 5.0
   process:
     startupProbe:
       httpGet:
