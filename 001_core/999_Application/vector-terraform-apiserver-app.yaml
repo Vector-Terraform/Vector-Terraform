@@ -14,7 +14,7 @@ spec:
   programmingLanguage: java
   operatingSystem:
     - distribution: debian
-      version: 12.04
+      version: 12.7
       architecture: amd64
   components:
     compiler:
