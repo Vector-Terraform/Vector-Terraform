@@ -1,0 +1,16 @@
+apiVersion: core.vector.dev/v1
+kind: Component
+metadata:
+  name: jdk-component
+spec:
+  operatingSystem:
+    - distribution: debian
+      version: 12.7
+      architecture: amd64
+  components:
+    compiler:
+      name: maven
+      version: 3.6.3
+    runtime:
+      name: jdk
+      version: 1.8
